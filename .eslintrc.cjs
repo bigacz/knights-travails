@@ -28,5 +28,6 @@ module.exports = {
     'import/extensions': 'off',
     'prefer-const': 'off',
     'no-empty': 'off',
+    'no-param-reassign': 'off',
   },
 };
