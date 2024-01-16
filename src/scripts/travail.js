@@ -1,4 +1,4 @@
-import board from './board.js';
+import board from './board';
 
 function getKnightMoves(start, finish) {
   const [startX, startY] = start;
