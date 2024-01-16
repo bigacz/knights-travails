@@ -15,6 +15,13 @@ class Square {
     this.ld = null;
     this.lu = null;
   }
+
+  getSquares() {
+    const properties = Object.values(this);
+    const squares = properties.filter((prop) => typeof prop === 'object');
+
+    return squares;
+  }
 }
 
 for (let x = 0; x < 8; x += 1) {
@@ -37,5 +44,7 @@ keys.forEach((square) => {
   square.ld = board[`${x - 2}${y - 1}`];
   square.lu = board[`${x - 2}${y + 1}`];
 });
+
+Object.freeze(board);
 
 export default board;
