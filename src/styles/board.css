@@ -1,13 +1,13 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(8, 50px);
-  grid-template-rows: repeat(8, 50px);
-}
-.board :nth-child(odd) {
-  background-color: white;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
 }
 
-/* .board div:nth-child(odd) {
+.board_square-black {
+  background-color: black;
+}
+
+.board_square-white {
   background-color: white;
 }
-*/
