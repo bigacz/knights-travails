@@ -4,7 +4,7 @@ body {
   display: grid;
   grid-template-areas:
     'header header'
-    'aside board';
+    'aside board-wrapper';
   grid-template-columns: 20vw 1fr;
   grid-template-rows: 8vh 1fr;
   color: white;

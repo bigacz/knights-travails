@@ -1,9 +1,14 @@
+.board-wrapper {
+  grid-area: board-wrapper;
+  display: grid;
+  place-content: center;
+}
+
 .board {
-  grid-area: board;
   display: grid;
   grid-template-columns: repeat(8, 100px);
   grid-template-rows: repeat(8, 100px);
-  place-content: center;
+  position: relative;
 }
 
 .board_square-black {
@@ -12,4 +17,19 @@
 
 .board_square-white {
   background-color: white;
+}
+
+.knight {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+}
+
+.knight-image {
+  height: 90px;
+  width: 90px;
 }
