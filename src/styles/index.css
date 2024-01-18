@@ -1,4 +1,11 @@
 body {
+  height: 100dvh;
   background-color: rgb(53, 51, 51);
   display: grid;
+  grid-template-areas:
+    'header header'
+    'aside board';
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 8vh 1fr;
+  color: white;
 }

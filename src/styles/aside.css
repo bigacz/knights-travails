@@ -1,0 +1,5 @@
+aside {
+  grid-area: aside;
+  display: grid;
+  justify-items: center;
+}
