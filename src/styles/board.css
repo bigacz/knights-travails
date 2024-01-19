@@ -11,12 +11,19 @@
   position: relative;
 }
 
+.board_square-black,
+.board_square-white {
+  display: grid;
+  place-items: center;
+}
+
 .board_square-black {
   background-color: black;
 }
 
 .board_square-white {
   background-color: white;
+  color: black;
 }
 
 .knight {
@@ -27,6 +34,7 @@
   width: 100px;
   display: grid;
   place-items: center;
+  transition: transform 1s;
 }
 
 .knight-image {

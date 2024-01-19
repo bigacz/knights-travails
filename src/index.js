@@ -1,5 +1,4 @@
 import './styles/styleLoader';
-import './scripts/ui/initializeBoard';
-import getKnightMoves from './scripts/logic/travail';
-
-console.log(getKnightMoves([0, 0], [7, 7]));
+import './scripts/ui/boardGui';
+import getKnightMoves from './scripts/logic/travailLogic';
+import './scripts/ui/travailGui';
