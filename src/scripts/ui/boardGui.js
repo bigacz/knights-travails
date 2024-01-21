@@ -1,39 +1,7 @@
-const boardDom = document.getElementById('board');
-let squares;
+import PubSub from 'pubsub-js';
+import './initializeBoard';
 
-function initializeBoard() {
-  for (let y = 0; y < 8; y += 1) {
-    for (let x = 7; x >= 0; x -= 1) {
-      createSquare(x, y);
-    }
-  }
-
-  squares = document.querySelectorAll('.square');
-}
-
-function createSquare(x, y) {
-  const square = document.createElement('div');
-  square.setAttribute('data-x', x);
-  square.setAttribute('data-y', y);
-  square.classList.add('square');
-
-  const isOddX = x % 2;
-  const isOddY = y % 2;
-
-  if (isOddY) {
-    if (isOddX) {
-      square.classList.add('square-black');
-    } else {
-      square.classList.add('square-white');
-    }
-  } else if (isOddX) {
-    square.classList.add('square-white');
-  } else {
-    square.classList.add('square-black');
-  }
-
-  boardDom.prepend(square);
-}
+const squares = document.querySelectorAll('.square');
 
 function getSquare(x, y) {
   const square = document.querySelector(`div[data-x="${x}"][data-y="${y}"]`);
@@ -61,6 +29,8 @@ function changeEnd(x, y) {
 
   const square = getSquare(x, y);
   square.classList.add('square-end');
+
+  PubSub.publish('pathChange');
 }
 
 function getEndCoordinates() {
@@ -76,15 +46,9 @@ function getEndCoordinates() {
   return [x, y];
 }
 
-const BoardGui = {
-  clearSteps,
-  addStep,
-};
+// Execution
 
-export default BoardGui;
-
-initializeBoard();
-
+let lastCoordinates = [];
 squares.forEach((element) => {
   element.addEventListener('click', (event) => {
     const x = element.getAttribute('data-x');
@@ -92,4 +56,27 @@ squares.forEach((element) => {
 
     changeEnd(x, y);
   });
+
+  element.addEventListener('dragover', (event) => {
+    const x = element.getAttribute('data-x');
+    const y = element.getAttribute('data-y');
+
+    const [lastX, lastY] = lastCoordinates;
+    if (x !== lastX || y !== lastY) {
+      PubSub.publish('squareDragOver', [x, y]);
+      lastCoordinates = [x, y];
+    }
+
+    event.preventDefault();
+  });
 });
+
+changeEnd(7, 7);
+
+const BoardGui = {
+  clearSteps,
+  addStep,
+  getEndCoordinates,
+};
+
+export default BoardGui;

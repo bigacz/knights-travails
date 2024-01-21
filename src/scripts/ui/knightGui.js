@@ -1,9 +1,11 @@
+import PubSub from 'pubsub-js';
+
 const knight = document.getElementById('knight');
-const squares = document.querySelectorAll('.square');
 const extractRegEx = /(-?\d+(?:,\d{1,})*(?:\.\d+)?)/g;
 
 function moveKnightTo(x, y) {
   knight.style.transform = `translate(${x * 100}%, -${y * 100}%)`;
+  PubSub.publish('pathChange');
 }
 
 function getKnightCoordinates() {
@@ -20,17 +22,19 @@ function getKnightCoordinates() {
   return [x, y];
 }
 
+// Execution
+
 knight.addEventListener('dragstart', (event) => {
   const img = new Image();
   event.dataTransfer.setDragImage(img, 0, 0);
 });
 
-squares.forEach((element) => {
-  element.addEventListener('dragover', (event) => {
-    const x = element.getAttribute('data-x');
-    const y = element.getAttribute('data-y');
-    moveKnightTo(x, y);
-
-    event.preventDefault();
-  });
+PubSub.subscribe('squareDragOver', (msg, [x, y]) => {
+  moveKnightTo(x, y);
 });
+
+const KnightGui = {
+  getKnightCoordinates,
+};
+
+export default KnightGui;
