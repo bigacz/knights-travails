@@ -5,7 +5,7 @@ body {
   grid-template-areas:
     'header header'
     'aside board-wrapper';
-  grid-template-columns: 20vw 1fr;
+  grid-template-columns: 10vw 1fr;
   grid-template-rows: 8vh 1fr;
   color: white;
   font-family: sans-serif;

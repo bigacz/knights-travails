@@ -16,17 +16,25 @@
   place-items: center;
 }
 
+.square.square-end {
+  background-color: yellow;
+}
+
 .square:hover {
   background-color: rgb(255, 0, 0);
 }
 
-.board_square-black {
+.square-black {
   background-color: black;
 }
 
-.board_square-white {
+.square-white {
   background-color: white;
   color: black;
+}
+
+.square-end {
+  background-color: yellow;
 }
 
 .knight {
