@@ -13,6 +13,7 @@ function createSquare(x, y) {
   const square = document.createElement('div');
   square.setAttribute('data-x', x);
   square.setAttribute('data-y', y);
+  square.classList.add('square');
 
   const isOddX = x % 2;
   const isOddY = y % 2;
@@ -50,11 +51,11 @@ function clearSteps() {
   });
 }
 
-initializeBoard();
-
 const BoardGui = {
   clearSteps,
   addStep,
 };
 
 export default BoardGui;
+
+initializeBoard();
