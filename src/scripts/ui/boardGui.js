@@ -3,24 +3,6 @@ import './initializeBoard';
 
 const squares = document.querySelectorAll('.square');
 
-function getSquare(x, y) {
-  const square = document.querySelector(`div[data-x="${x}"][data-y="${y}"]`);
-  return square;
-}
-
-function addStep(step, x, y) {
-  const square = getSquare(x, y);
-  square.textContent = step;
-}
-
-function clearSteps() {
-  squares.forEach((element) => {
-    if (element.id !== 'knight') {
-      element.textContent = '';
-    }
-  });
-}
-
 function changeEnd(x, y) {
   const previous = document.querySelector('.square-end');
   if (previous) {
@@ -40,12 +22,39 @@ function getEndCoordinates() {
     return null;
   }
 
-  const x = endElement.getAttribute('data-x');
-  const y = endElement.getAttribute('data-y');
+  const x = Number(endElement.getAttribute('data-x'));
+  const y = Number(endElement.getAttribute('data-y'));
 
   return [x, y];
 }
 
+function visualizePath(path) {
+  clearSteps();
+  for (let i = 1; i < path.length; i += 1) {
+    const [x, y] = path[i];
+    addStep(i, x, y);
+  }
+}
+
+// Helper functions
+
+function getSquare(x, y) {
+  const square = document.querySelector(`div[data-x="${x}"][data-y="${y}"]`);
+  return square;
+}
+
+function addStep(step, x, y) {
+  const square = getSquare(x, y);
+  square.textContent = step;
+}
+
+function clearSteps() {
+  squares.forEach((element) => {
+    if (element.id !== 'knight') {
+      element.textContent = '';
+    }
+  });
+}
 // Execution
 
 let lastCoordinates = [];
@@ -74,8 +83,7 @@ squares.forEach((element) => {
 changeEnd(7, 7);
 
 const BoardGui = {
-  clearSteps,
-  addStep,
+  visualizePath,
   getEndCoordinates,
 };
 

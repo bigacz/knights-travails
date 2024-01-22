@@ -45,7 +45,8 @@
   width: 100px;
   display: grid;
   place-items: center;
-  transition: all 0.2s;
+  /* Turned off for testing */
+  /* transition: all 0.2s; */
   cursor: grab;
 }
 
