@@ -15,25 +15,7 @@
   place-items: center;
 }
 
-.square:hover {
-  border: 3px solid red;
-}
-
-.square-black {
-  background-color: black;
-  color: white;
-}
-
-.square-white {
-  background-color: white;
-  color: black;
-}
-
-.square-end {
-  width: 100px;
-}
-
-.square-end::before {
+.square:hover::after {
   position: absolute;
   content: '';
   clip-path: polygon(
@@ -54,6 +36,26 @@
   background-color: currentColor;
   height: 3rem;
   width: 3rem;
+}
+
+.square-black {
+  background-color: black;
+  color: white;
+}
+
+.square-white {
+  background-color: white;
+  color: black;
+}
+
+.square-end {
+  width: 100px;
+}
+
+.square-end {
+  width: 100px;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .knight {
