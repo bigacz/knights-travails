@@ -2,10 +2,7 @@ body {
   height: 100dvh;
   background-color: rgb(53, 51, 51);
   display: grid;
-  grid-template-areas:
-    'header header'
-    'aside board-wrapper';
-  grid-template-columns: 10vw 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 8vh 1fr;
   color: white;
   font-family: sans-serif;
