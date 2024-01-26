@@ -1,6 +1,7 @@
 .board-wrapper {
+  grid-area: 'board-wrapper';
   display: grid;
-  justify-content: center;
+  justify-content: start;
   align-content: start;
 }
 
@@ -10,9 +11,9 @@
   grid-template-rows: repeat(8, 100px);
   position: relative;
   border: 9px solid black;
-  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 1);
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
 }
 
 .square {

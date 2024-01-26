@@ -1,4 +1,21 @@
 aside {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content 2rem 2rem;
+  grid-area: aside;
   justify-items: center;
+}
+
+aside h2 {
+  margin: 0;
+  font-size: 3rem;
+  text-align: center;
+  font-family: 'Washington-Text';
+  font-weight: 500;
+}
+
+aside p {
+  font-family: 'Washington-Text';
+  font-weight: 500;
+  font-size: 1.6rem;
 }

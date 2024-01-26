@@ -2,8 +2,10 @@ body {
   height: 100dvh;
   background-color: white;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header header'
+    'aside board-wrapper';
+  grid-template-columns: 30vw 1fr;
   grid-template-rows: 12vh 1fr;
-
   font-family: sans-serif;
 }
