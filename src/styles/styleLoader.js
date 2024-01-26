@@ -1,4 +1,5 @@
 import 'normalize.css';
+import './fonts.css';
 import './index.css';
 import './board.css';
 import './knight.css';
