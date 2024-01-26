@@ -1,0 +1,28 @@
+.knight {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+  /* Turned off for testing */
+  /* transition: all 0.2s; */
+  cursor: grab;
+}
+
+.knight_image {
+  height: 90px;
+  width: 90px;
+  pointer-events: none;
+}
+
+.knight-black .knight_image {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(333deg) brightness(92%)
+    contrast(108%);
+}
+
+.knight-white .knight_image {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(3deg)
+    brightness(100%) contrast(104%);
+}

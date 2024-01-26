@@ -36,6 +36,13 @@ function visualizePath(path) {
   }
 }
 
+function getSquareColor(x, y) {
+  const square = getSquare(x, y);
+  const color = square.getAttribute('data-color');
+
+  return color;
+}
+
 // Helper functions
 
 function getSquare(x, y) {
@@ -55,6 +62,7 @@ function clearSteps() {
     }
   });
 }
+
 // Execution
 
 let lastCoordinates = [];
@@ -83,6 +91,7 @@ squares.forEach((element) => {
 changeEnd(7, 7);
 
 const BoardGui = {
+  getSquareColor,
   visualizePath,
   getEndCoordinates,
 };

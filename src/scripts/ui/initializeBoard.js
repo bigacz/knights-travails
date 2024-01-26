@@ -17,17 +17,22 @@ function createSquare(x, y) {
   const isOddX = x % 2;
   const isOddY = y % 2;
 
+  let color = 'black';
+
   if (isOddY) {
     if (isOddX) {
-      square.classList.add('square-black');
+      color = 'black';
     } else {
-      square.classList.add('square-white');
+      color = 'white';
     }
   } else if (isOddX) {
-    square.classList.add('square-white');
+    color = 'white';
   } else {
-    square.classList.add('square-black');
+    color = 'black';
   }
+
+  square.classList.add(`square-${color}`);
+  square.setAttribute('data-color', color);
 
   boardDom.prepend(square);
 }

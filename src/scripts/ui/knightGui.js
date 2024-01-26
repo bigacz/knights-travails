@@ -1,10 +1,15 @@
 import PubSub from 'pubsub-js';
+import boardGui from './boardGui';
 
 const knight = document.getElementById('knight');
 const extractRegEx = /(-?\d+(?:,\d{1,})*(?:\.\d+)?)/g;
 
 function moveKnightTo(x, y) {
   knight.style.transform = `translate(${x * 100}%, -${y * 100}%)`;
+
+  const squareColor = boardGui.getSquareColor(x, y);
+  changeKnightColor(squareColor);
+
   PubSub.publish('pathChange');
 }
 
@@ -20,6 +25,22 @@ function getKnightCoordinates() {
   }
 
   return [x, y];
+}
+
+// Helper
+
+function changeKnightColor(color) {
+  const blackClass = 'knight-black';
+  const whiteClass = 'knight-white';
+
+  knight.classList.remove(whiteClass);
+  knight.classList.remove(blackClass);
+
+  if (color === 'white') {
+    knight.classList.add(blackClass);
+  } else {
+    knight.classList.add(whiteClass);
+  }
 }
 
 // Execution
