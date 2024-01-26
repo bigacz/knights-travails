@@ -67,7 +67,7 @@ function clearSteps() {
 
 let lastCoordinates = [];
 squares.forEach((element) => {
-  element.addEventListener('click', (event) => {
+  element.addEventListener('click', () => {
     const x = element.getAttribute('data-x');
     const y = element.getAttribute('data-y');
 
@@ -88,9 +88,8 @@ squares.forEach((element) => {
   });
 });
 
-changeEnd(7, 7);
-
 const BoardGui = {
+  changeEnd,
   getSquareColor,
   visualizePath,
   getEndCoordinates,

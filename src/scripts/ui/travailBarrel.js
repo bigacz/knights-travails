@@ -10,3 +10,7 @@ PubSub.subscribe('pathChange', () => {
   const path = getKnightMoves(knightCoordinates, endCoordinates);
   BoardGui.visualizePath(path);
 });
+
+// Execution
+
+BoardGui.changeEnd(7, 7);
