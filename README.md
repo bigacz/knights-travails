@@ -1,6 +1,6 @@
 # Knights Travails
 
-This page takes two inputs from you and calculates the fastest path for knight in chess!
+This page takes two inputs from you and calculates the fastest path for knight in chess!\
 [Live preview](https://bigacz.github.io/knights-travails/)
 
 ## Approach
