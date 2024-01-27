@@ -11,4 +11,4 @@ For searching for the shortest path I utilize a level order traversing algorithm
 
 ### TODO:
 
-Add mediaquery when screen is small to add how to below the boardgut
+Add mediaquery when screen is small to add how to below the board
