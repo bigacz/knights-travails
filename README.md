@@ -5,7 +5,7 @@ This page takes two inputs from you and calculates the fastest path for knight i
 
 ## Approach
 
-I use an undirected with graph called board, each vertex has 2-8 deegrees.\
+I use an undirected graph called board, each vertex has 2-8 deegrees.\
 For searching for the shortest path I utilize a level order traversing algorithm.
 ![graph](./sketches.png)
 
